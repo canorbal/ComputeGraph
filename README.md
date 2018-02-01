@@ -1,5 +1,8 @@
 ***Compute Graph***
 
+[![Build Status](https://travis-ci.org/canorbal/ComputeGraph.svg?branch=master)](https://travis-ci.org/canorbal/ComputeGraph)
+
+
 I. Trivia
 
 This library is for usable calculating on tables.
