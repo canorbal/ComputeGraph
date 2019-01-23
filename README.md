@@ -5,13 +5,13 @@
 
 I. Trivia
 
-This library is for usable calculating on tables.
+This library is for calculations on tables.
 
 Table is a sequence of dict-like objects where each 
-dict is a row of table and every key in dicts is a 
-column in table. 
+dict is a row of table and every key in the dicts is a 
+column in the table. 
 
-Calculation on a table is a sequence of 
+Calculation is a sequence of 
 transformations. Computational Graph is a chain of 
 transformations where each node is a transform operation.
 Definition of operations is separated from its calculations.
@@ -20,9 +20,9 @@ Definition of operations is separated from its calculations.
     
     
     
-II. Interface.
+II. API.
 
-All nodes are defined in [keras-like](https://keras.io) style.
+All nodes are defined in [keras](https://keras.io) style.
 
 ```python
 if __name__ == "__main__":
@@ -39,14 +39,14 @@ if __name__ == "__main__":
 ```
     
  
- Operations in graph work with rows in table (not with entire table),
- because this approach avoids extra coping.
+ Operations in the graph work with rows in the table (not with entire table),
+ because this approach avoids extra copying.
  
  The list of all possible operations:
  
    1) Map
    
-   Apply mapper operation to every row in table. For example, one
+   Apply a mapper operation to every row in table. For example, one
    of possible mapper:
      
 ```python
@@ -87,7 +87,7 @@ def sum_columns_folder(state, record):
    4) Reduce
    
    This operation is similar to Map but it is called for rows which have the same
-   keys. These rows are united in a list and then passing to reducer. Reduce 
+   keys. These rows are united in a list and then passed to reducer. Reduce 
    works for O(n) if rows are sorted by required keys so input sequence of
    dicts should be sorted.
    
@@ -117,10 +117,10 @@ def term_frequency_reducer(records):
    5) Join
    
    Works like [SQL Join](https://en.wikipedia.org/wiki/Join_(SQL)) operation.
-   Result of one graph is joined to another graph.
+   The result of one graph is joined to another graph.
    
    Join takes another graph as an argument. [Topological sort](https://en.wikipedia.org/wiki/Topological_sorting)
-   is used to find optimal order of computation of different graphs:
+   is used to find optimal order of computation of different graphs.
    
    
    
